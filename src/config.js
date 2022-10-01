@@ -14,3 +14,11 @@ export const initLoad = async () => {
   }
   return res;
 };
+
+export const loadDetails = async (id) => {
+  const res = await axios.get(`${baseUrl}/${id}`);
+  if (res.isAxiosError) {
+    throw new Error('Can\'t fetch');
+  }
+  return res;
+};

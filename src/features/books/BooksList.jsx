@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 
 import { initLoad, selectBooks, selectBooksInfo } from '../books/books-slice';
 
@@ -17,8 +19,9 @@ const Wrapper = styled.div`
 export const BooksList = () => {
   const books = useSelector(selectBooks);
   const { status, qty } = useSelector(selectBooksInfo);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!qty) {
@@ -36,6 +39,7 @@ export const BooksList = () => {
                 <Card
                   key={id}
                   id={id}
+                  onClick={() => navigate(`/book/${id}`)}
                   {...volumeInfo}
                 />
               );
