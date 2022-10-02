@@ -9,6 +9,7 @@ import { initLoad, loadMore, selectBooks, selectBooksInfo } from './books-slice'
 import { Card } from '../../components/Card';
 import { List } from '../../components/List';
 import { LoadMoreButton } from '../../components/Buttons';
+import { Loader } from '../../components/Loader';
 
 
 const Wrapper = styled.div`
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
 
 export const BooksList = () => {
   const books = useSelector(selectBooks);
-  const { status, qty, pagination } = useSelector(selectBooksInfo);
+  const { status, error, qty, pagination } = useSelector(selectBooksInfo);
   const { currIndex, pageTerm, step } = pagination;
 
   const dispatch = useDispatch();
@@ -53,6 +54,9 @@ export const BooksList = () => {
           </List>
         )
       }
+      {(error || pagination.error) && <Loader>Can't fetch data from the server =( </Loader>}
+      {(status === 'loading') && <Loader pos={true} />}
+      {(pagination.status === 'loading') && <Loader pos={null} />}
       {pageTerm && (currIndex <= qty-step) && pagination.status !== 'loading'
         && <LoadMoreButton onClick={() => dispatch(loadMore())}>Load more</LoadMoreButton>}
     </Wrapper>

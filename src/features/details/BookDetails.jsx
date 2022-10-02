@@ -1,11 +1,12 @@
-import { Info } from './Info';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getDetails, loadBookById, selectDetails } from './details-slice';
+import { Info } from './Info';
+import { Loader } from '../../components/Loader';
+import { clearDetails, getDetails, loadBookById, selectDetails } from './details-slice';
 
-export const BookDetails = ({ id, navigate }) => {
-  const { currentBook } = useSelector(selectDetails);
+export const BookDetails = ({ id }) => {
+  const { status, error, currentBook } = useSelector(selectDetails);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,10 +16,16 @@ export const BookDetails = ({ id, navigate }) => {
     } else {
       dispatch(loadBookById(id));
     }
+
+    return () => {
+      dispatch(clearDetails());
+    };
   }, [id, dispatch]);
 
   return (
     <>
+      {status === 'loading' && <Loader pos={true} />}
+      {error && <Loader>Can't fetch the book info =(</Loader>}
       {currentBook && <Info id={id} {...currentBook.volumeInfo} />}
     </>
   );

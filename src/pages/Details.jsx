@@ -13,7 +13,7 @@ export const Details = () => {
       <Button onClick={() => navigate(-1)}>
         <IoArrowBack /> Back
       </Button>
-      <BookDetails navigate={navigate} id={id} />
+      <BookDetails id={id} />
     </div>
   );
 };
