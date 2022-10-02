@@ -20,8 +20,8 @@ export const initLoad = async () => {
   return res;
 };
 
-export const loadBooks = async (args) => {
-  const res = await axios.get(setQuery(args));
+export const loadBooks = async (args, currIndex) => {
+  const res = await axios.get(setQuery(args, currIndex));
   if (res.isAxiosError) {
     throw new Error('Can\'t fetch');
   }

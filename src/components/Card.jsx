@@ -53,7 +53,10 @@ export const Card = ({ id, authors, categories, title, onClick }) => {
       <CardImage src={imgUrl} alt={title} />
       <CardBody>
         <CardGenre>{(categories) ? categories[0].toUpperCase() : 'N/A'}</CardGenre>
-        <CardTitle>{(title.length > 80) ? title.slice(0, 80)+'...' : title}</CardTitle>
+        <CardTitle>
+          { (!title)
+            ? 'N/A'
+            : (title.length > 80) ? title.slice(0, 80)+'...' : title}</CardTitle>
         <CardAuthors>
           {(authors && authors.length > 4)
             ? authors.slice(0, 4).join(', ')+'...'

@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { clearControls } from '../controls/controls-slice';
-import { initLoad, selectBooks, selectBooksInfo } from '../books/books-slice';
+import { initLoad, loadMore, selectBooks, selectBooksInfo } from './books-slice';
 
 import { Card } from '../../components/Card';
 import { List } from '../../components/List';
+import { LoadMoreButton } from '../../components/Buttons';
 
 
 const Wrapper = styled.div`
@@ -18,7 +19,8 @@ const Wrapper = styled.div`
 
 export const BooksList = () => {
   const books = useSelector(selectBooks);
-  const { status, qty } = useSelector(selectBooksInfo);
+  const { status, qty, pagination } = useSelector(selectBooksInfo);
+  const { currIndex, pageTerm, step } = pagination;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,6 +53,8 @@ export const BooksList = () => {
           </List>
         )
       }
+      {pageTerm && (currIndex <= qty-step) && pagination.status !== 'loading'
+        && <LoadMoreButton onClick={() => dispatch(loadMore())}>Load more</LoadMoreButton>}
     </Wrapper>
   );
 };

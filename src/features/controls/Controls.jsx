@@ -5,10 +5,10 @@ import { Search } from './Search';
 import { CustomSelect } from './CustomSelect';
 
 import { setCategory, setSearch,  selectControls, setOrderBy } from './controls-slice';
-import { loadBooks } from '../books/books-slice';
+import { loadBooks, clearPagination, selectBooksInfo } from '../books/books-slice';
 
-import { SubButton } from '../../components/Buttons';
-import { SearchImg } from '../../components/Buttons';
+import { SubButton, SearchImg } from '../../components/Buttons';
+
 
 const categoriesMap = {
   'all': { value: 'all', label: 'all' },
@@ -75,9 +75,18 @@ const StyledRow = styled.div`
   }
 `;
 
+const Results = styled.h5`
+  margin: 1rem auto;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: royalblue;
+`;
+
 export const Controls = () => {
   const dispatch = useDispatch();
   const { search, category, orderBy } = useSelector(selectControls);
+  const { qty, pagination: { pageTerm } } = useSelector(selectBooksInfo);
+
 
   const handleSearch = (str) => {
     dispatch(setSearch(str));
@@ -95,6 +104,7 @@ export const Controls = () => {
     e.preventDefault();
     if (search.trim().length) {
       // console.log('hey, submit clicked!!!');
+      dispatch(clearPagination());
       dispatch(loadBooks({ search, category, orderBy }));
       document.activeElement.blur();
     }
@@ -139,6 +149,7 @@ export const Controls = () => {
           </StyledRow>
         </StyledFilterRow>
       </StyledForm>
+      {qty && pageTerm && <Results>{qty} results for "{pageTerm}"</Results>}
     </Wrapper>
   );
 };

@@ -20,9 +20,30 @@ export const initLoad = createAsyncThunk(
 
 export const loadBooks = createAsyncThunk(
   '@@books/loadBooks',
-  async (args, { rejectWithValue }) => {
+  async (args, { getState, dispatch, rejectWithValue }) => {
     try {
+      const { search } = getState().controls;
       const res = await api.loadBooks(args);
+
+      dispatch(setPageTerm(search));
+      return res.data;
+
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const loadMore = createAsyncThunk(
+  '@@books/loadMore',
+  async (_, { getState, rejectWithValue }) => {
+    try {
+      const { currIndex, pageTerm }= getState().books.pagination;
+      const { category, orderBy } = getState().controls;
+      const search = pageTerm;
+      const res = await api.loadBooks({ search, category, orderBy }, currIndex);
+
+      // console.log(res.data);
 
       return res.data;
 
@@ -32,11 +53,20 @@ export const loadBooks = createAsyncThunk(
   }
 );
 
+const paginationState = {
+  status: 'idle',
+  error: null,
+  currIndex: null,
+  pageTerm: '',
+  step: 30,
+};
+
 const initialState = {
   status: 'idle', // 'loading', 'received', 'rejected'
   error: null,
   totalItems: null,
   list: [],
+  pagination: paginationState,
 };
 
 // Slice definition
@@ -44,7 +74,12 @@ const booksSlice = createSlice({
   name: '@@books',
   initialState,
   reducers: {
-
+    setPageTerm: (state, action) => {
+      state.pagination.pageTerm = action.payload;
+    },
+    clearPagination: (state, action) => {
+      state.pagination = paginationState;
+    },
   },
   extraReducers: {
     // InitLoad
@@ -65,21 +100,36 @@ const booksSlice = createSlice({
       state.status = 'received';
       state.list = data;
       state.totalItems = totalItems;
+      state.pagination.currIndex = state.pagination.step;
     },
 
+    // LoadMore
+    [loadMore.pending]: helpers.setPageLoading,
+    [loadMore.rejected]: (state, action) => {
+      state.pagination.status = 'rejected';
+      state.pagination.error = action.payload || action.meta.error;
+    },
+    [loadMore.fulfilled]: (state, action) => {
+      // console.log('action.payload.data.items: ', action.payload.items)
+      const data = action.payload.items;
+      state.list = _.uniqBy([...state.list, ...data], 'id');
 
+      state.pagination.status = 'received';
+      state.pagination.currIndex += state.pagination.step;
+    },
   },
 });
 
+export const { setPageTerm, clearPagination } = booksSlice.actions;
 export const booksReducer = booksSlice.reducer;
 
 export const selectBooks = (state) => state.books.list;
-
 export const selectBooksInfo = (state) => {
   return {
     status: state.books.status,
     error: state.books.error,
     qty: state.books.totalItems,
+    pagination: state.books.pagination,
   };
 };
 
