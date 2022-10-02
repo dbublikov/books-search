@@ -21,7 +21,6 @@ export const Button = styled.button`
   }
 `;
 
-// new markup
 export const SearchImg = styled(IoSearchOutline)`
   display: block;
   width: 1.6rem;
@@ -57,25 +56,6 @@ export const SubButton = styled.button`
 
   @media (min-width: 425px) {
     right: 17.8%;
-  }
-`;
-
-export const SubmitButton = styled.button`
-  /* position: absolute;
-  top: 50;
-  right: 0; */
-  display: block;
-  margin-left: 10px;
-  background-color: turquoise;
-  color: #fff;
-  font-size: 0.9rem;
-  border: 0;
-  border-radius: 5px;
-  height: 40px;
-  padding: 0 20px;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.9;
   }
 `;
 

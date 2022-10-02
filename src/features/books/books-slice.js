@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import _ from 'lodash';
+
 import * as api from '../../config';
 import * as helpers from './helpers';
 
@@ -8,6 +10,20 @@ export const initLoad = createAsyncThunk(
     try {
       const res = await api.initLoad();
       // console.log(res)
+      return res.data;
+
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const loadBooks = createAsyncThunk(
+  '@@books/loadBooks',
+  async (args, { rejectWithValue }) => {
+    try {
+      const res = await api.loadBooks(args);
+
       return res.data;
 
     } catch (error) {
@@ -35,6 +51,23 @@ const booksSlice = createSlice({
     [initLoad.pending]: helpers.setLoading,
     [initLoad.rejected]: helpers.setError,
     [initLoad.fulfilled]: helpers.setReceived,
+
+    // LoadBooks
+    [loadBooks.pending]: helpers.setLoading,
+    [loadBooks.rejected]: helpers.setError,
+    [loadBooks.fulfilled]: (state, action) => {
+      const { items, totalItems } = action.payload;
+      // const result = _.uniqBy(_.flatMap(items, 'volumeInfo'), 'title');
+      // console.log('uniq items by TITLE: ', result);
+
+      const data = _.uniqBy(items, 'id');
+      // console.log('uniq items by ID: ', data);
+      state.status = 'received';
+      state.list = data;
+      state.totalItems = totalItems;
+    },
+
+
   },
 });
 
