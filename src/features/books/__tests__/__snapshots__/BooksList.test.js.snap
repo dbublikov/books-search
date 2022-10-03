@@ -1,0 +1,521 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BooksList should list several books initially 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-eDWCr editcY"
+      >
+        <section
+          class="sc-gKPRtg ilzhkz"
+        >
+          <article
+            class="sc-bcXHqe UJFxh"
+          >
+            <img
+              alt="Start Painting Now"
+              class="sc-gswNZR bUwCaT"
+              src="https://books.google.com/books/publisher/content/images/frontcover/osZVEAAAQBAJ?fife=w270"
+            />
+            <div
+              class="sc-dkrFOg hXwiuy"
+            >
+              <h5
+                class="sc-eDvSVe broPkG"
+              >
+                N/A
+              </h5>
+              <h3
+                class="sc-hLBbgP degNmy"
+              >
+                Start Painting Now
+              </h3>
+              <h5
+                class="sc-jSUZER hEWtoK"
+              >
+                Emily Powell, Sarah Moore
+              </h5>
+            </div>
+          </article>
+          <article
+            class="sc-bcXHqe UJFxh"
+          >
+            <img
+              alt="What the Ermine Saw"
+              class="sc-gswNZR bUwCaT"
+              src="https://books.google.com/books/publisher/content/images/frontcover/d_E3EAAAQBAJ?fife=w270"
+            />
+            <div
+              class="sc-dkrFOg hXwiuy"
+            >
+              <h5
+                class="sc-eDvSVe broPkG"
+              >
+                N/A
+              </h5>
+              <h3
+                class="sc-hLBbgP degNmy"
+              >
+                What the Ermine Saw
+              </h3>
+              <h5
+                class="sc-jSUZER hEWtoK"
+              >
+                Eden Collinsworth
+              </h5>
+            </div>
+          </article>
+          <article
+            class="sc-bcXHqe UJFxh"
+          >
+            <img
+              alt="What Artists Wear"
+              class="sc-gswNZR bUwCaT"
+              src="https://books.google.com/books/publisher/content/images/frontcover/gwJLEAAAQBAJ?fife=w270"
+            />
+            <div
+              class="sc-dkrFOg hXwiuy"
+            >
+              <h5
+                class="sc-eDvSVe broPkG"
+              >
+                N/A
+              </h5>
+              <h3
+                class="sc-hLBbgP degNmy"
+              >
+                What Artists Wear
+              </h3>
+              <h5
+                class="sc-jSUZER hEWtoK"
+              >
+                Charlie Porter
+              </h5>
+            </div>
+          </article>
+        </section>
+        
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-eDWCr editcY"
+    >
+      <section
+        class="sc-gKPRtg ilzhkz"
+      >
+        <article
+          class="sc-bcXHqe UJFxh"
+        >
+          <img
+            alt="Start Painting Now"
+            class="sc-gswNZR bUwCaT"
+            src="https://books.google.com/books/publisher/content/images/frontcover/osZVEAAAQBAJ?fife=w270"
+          />
+          <div
+            class="sc-dkrFOg hXwiuy"
+          >
+            <h5
+              class="sc-eDvSVe broPkG"
+            >
+              N/A
+            </h5>
+            <h3
+              class="sc-hLBbgP degNmy"
+            >
+              Start Painting Now
+            </h3>
+            <h5
+              class="sc-jSUZER hEWtoK"
+            >
+              Emily Powell, Sarah Moore
+            </h5>
+          </div>
+        </article>
+        <article
+          class="sc-bcXHqe UJFxh"
+        >
+          <img
+            alt="What the Ermine Saw"
+            class="sc-gswNZR bUwCaT"
+            src="https://books.google.com/books/publisher/content/images/frontcover/d_E3EAAAQBAJ?fife=w270"
+          />
+          <div
+            class="sc-dkrFOg hXwiuy"
+          >
+            <h5
+              class="sc-eDvSVe broPkG"
+            >
+              N/A
+            </h5>
+            <h3
+              class="sc-hLBbgP degNmy"
+            >
+              What the Ermine Saw
+            </h3>
+            <h5
+              class="sc-jSUZER hEWtoK"
+            >
+              Eden Collinsworth
+            </h5>
+          </div>
+        </article>
+        <article
+          class="sc-bcXHqe UJFxh"
+        >
+          <img
+            alt="What Artists Wear"
+            class="sc-gswNZR bUwCaT"
+            src="https://books.google.com/books/publisher/content/images/frontcover/gwJLEAAAQBAJ?fife=w270"
+          />
+          <div
+            class="sc-dkrFOg hXwiuy"
+          >
+            <h5
+              class="sc-eDvSVe broPkG"
+            >
+              N/A
+            </h5>
+            <h3
+              class="sc-hLBbgP degNmy"
+            >
+              What Artists Wear
+            </h3>
+            <h5
+              class="sc-jSUZER hEWtoK"
+            >
+              Charlie Porter
+            </h5>
+          </div>
+        </article>
+      </section>
+      
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
+  "unmount": [Function],
+}
+`;
+
+exports[`BooksList should load more books when button clicked 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-eDWCr editcY"
+      >
+        <section
+          class="sc-gKPRtg ilzhkz"
+        >
+          <article
+            class="sc-bcXHqe UJFxh"
+          >
+            <img
+              alt="Start Painting Now"
+              class="sc-gswNZR bUwCaT"
+              src="https://books.google.com/books/publisher/content/images/frontcover/osZVEAAAQBAJ?fife=w270"
+            />
+            <div
+              class="sc-dkrFOg hXwiuy"
+            >
+              <h5
+                class="sc-eDvSVe broPkG"
+              >
+                N/A
+              </h5>
+              <h3
+                class="sc-hLBbgP degNmy"
+              >
+                Start Painting Now
+              </h3>
+              <h5
+                class="sc-jSUZER hEWtoK"
+              >
+                Emily Powell, Sarah Moore
+              </h5>
+            </div>
+          </article>
+          <article
+            class="sc-bcXHqe UJFxh"
+          >
+            <img
+              alt="What the Ermine Saw"
+              class="sc-gswNZR bUwCaT"
+              src="https://books.google.com/books/publisher/content/images/frontcover/d_E3EAAAQBAJ?fife=w270"
+            />
+            <div
+              class="sc-dkrFOg hXwiuy"
+            >
+              <h5
+                class="sc-eDvSVe broPkG"
+              >
+                N/A
+              </h5>
+              <h3
+                class="sc-hLBbgP degNmy"
+              >
+                What the Ermine Saw
+              </h3>
+              <h5
+                class="sc-jSUZER hEWtoK"
+              >
+                Eden Collinsworth
+              </h5>
+            </div>
+          </article>
+          <article
+            class="sc-bcXHqe UJFxh"
+          >
+            <img
+              alt="What Artists Wear"
+              class="sc-gswNZR bUwCaT"
+              src="https://books.google.com/books/publisher/content/images/frontcover/gwJLEAAAQBAJ?fife=w270"
+            />
+            <div
+              class="sc-dkrFOg hXwiuy"
+            >
+              <h5
+                class="sc-eDvSVe broPkG"
+              >
+                N/A
+              </h5>
+              <h3
+                class="sc-hLBbgP degNmy"
+              >
+                What Artists Wear
+              </h3>
+              <h5
+                class="sc-jSUZER hEWtoK"
+              >
+                Charlie Porter
+              </h5>
+            </div>
+          </article>
+        </section>
+        <button
+          class="sc-jrcTuL dyKfxA"
+        >
+          Load more
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-eDWCr editcY"
+    >
+      <section
+        class="sc-gKPRtg ilzhkz"
+      >
+        <article
+          class="sc-bcXHqe UJFxh"
+        >
+          <img
+            alt="Start Painting Now"
+            class="sc-gswNZR bUwCaT"
+            src="https://books.google.com/books/publisher/content/images/frontcover/osZVEAAAQBAJ?fife=w270"
+          />
+          <div
+            class="sc-dkrFOg hXwiuy"
+          >
+            <h5
+              class="sc-eDvSVe broPkG"
+            >
+              N/A
+            </h5>
+            <h3
+              class="sc-hLBbgP degNmy"
+            >
+              Start Painting Now
+            </h3>
+            <h5
+              class="sc-jSUZER hEWtoK"
+            >
+              Emily Powell, Sarah Moore
+            </h5>
+          </div>
+        </article>
+        <article
+          class="sc-bcXHqe UJFxh"
+        >
+          <img
+            alt="What the Ermine Saw"
+            class="sc-gswNZR bUwCaT"
+            src="https://books.google.com/books/publisher/content/images/frontcover/d_E3EAAAQBAJ?fife=w270"
+          />
+          <div
+            class="sc-dkrFOg hXwiuy"
+          >
+            <h5
+              class="sc-eDvSVe broPkG"
+            >
+              N/A
+            </h5>
+            <h3
+              class="sc-hLBbgP degNmy"
+            >
+              What the Ermine Saw
+            </h3>
+            <h5
+              class="sc-jSUZER hEWtoK"
+            >
+              Eden Collinsworth
+            </h5>
+          </div>
+        </article>
+        <article
+          class="sc-bcXHqe UJFxh"
+        >
+          <img
+            alt="What Artists Wear"
+            class="sc-gswNZR bUwCaT"
+            src="https://books.google.com/books/publisher/content/images/frontcover/gwJLEAAAQBAJ?fife=w270"
+          />
+          <div
+            class="sc-dkrFOg hXwiuy"
+          >
+            <h5
+              class="sc-eDvSVe broPkG"
+            >
+              N/A
+            </h5>
+            <h3
+              class="sc-hLBbgP degNmy"
+            >
+              What Artists Wear
+            </h3>
+            <h5
+              class="sc-jSUZER hEWtoK"
+            >
+              Charlie Porter
+            </h5>
+          </div>
+        </article>
+      </section>
+      <button
+        class="sc-jrcTuL dyKfxA"
+      >
+        Load more
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "store": Object {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
+  "unmount": [Function],
+}
+`;
