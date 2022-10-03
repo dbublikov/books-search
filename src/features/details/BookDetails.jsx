@@ -1,26 +1,9 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 import { Info } from './Info';
 import { Loader } from '../../components/Loader';
-import { clearDetails, getDetails, loadBookById, selectDetails } from './details-slice';
+import { useDetails } from '../../hooks/use-details';
 
 export const BookDetails = ({ id }) => {
-  const { status, error, currentBook } = useSelector(selectDetails);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (localStorage.hasOwnProperty(id)) {
-      // console.log('check localStorage!!!')
-      dispatch(getDetails(id));
-    } else {
-      dispatch(loadBookById(id));
-    }
-
-    return () => {
-      dispatch(clearDetails());
-    };
-  }, [id, dispatch]);
+  const { status, error, currentBook } = useDetails(id);
 
   return (
     <>

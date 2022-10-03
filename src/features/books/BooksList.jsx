@@ -1,16 +1,14 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
-import { clearControls } from '../controls/controls-slice';
-import { initLoad, loadMore, selectBooks, selectBooksInfo } from './books-slice';
 
 import { Card } from '../../components/Card';
 import { List } from '../../components/List';
 import { LoadMoreButton } from '../../components/Buttons';
 import { Loader } from '../../components/Loader';
 
+import { useBooks } from '../../hooks/use-books';
+import { loadMore } from './books-slice';
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,22 +17,11 @@ const Wrapper = styled.div`
 `;
 
 export const BooksList = () => {
-  const books = useSelector(selectBooks);
-  const { status, error, qty, pagination } = useSelector(selectBooksInfo);
+  const [books, { status, error, qty, pagination }] = useBooks();
   const { currIndex, pageTerm, step } = pagination;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!qty) {
-      dispatch(initLoad());
-    }
-
-    return () => {
-      dispatch(clearControls());
-    };
-  }, [qty, dispatch]);
 
   return (
     <Wrapper>

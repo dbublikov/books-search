@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { Container } from './Container';
+import { useCleanup } from '../hooks/use-cleanup';
 
 const HeaderEl = styled.header`
   box-shadow: var(--shadow);
@@ -25,12 +26,13 @@ const Title = styled(Link).attrs({
 `;
 
 export const Header = () => {
+  const cleanUp = useCleanup();
 
   return (
     <HeaderEl>
       <Container>
         <Wrapper>
-          <Title>BOOKS-SEARCH</Title>
+          <Title onClick={cleanUp}>BOOKS-SEARCH</Title>
         </Wrapper>
       </Container>
     </HeaderEl>
